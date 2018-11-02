@@ -65,8 +65,6 @@ jobs:
       script:
         - bundle exec rake spec
 
-    # Uncomment the following for deployment tasks and set 'secure' in both
-    # sections appropriately
     - stage: deploy
       rvm: 2.4.4
       if: 'fork = false AND tag = true'
