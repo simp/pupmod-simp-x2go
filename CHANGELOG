@@ -1,2 +1,5 @@
+* Thu Nov 01 2018 Liz Nemsick<lnemsick.simp@gmail.com> - 0.2.0
+- Update to Hiera 5
+
 * Thu May 17 2018 Trevor Vaughan <tvaughan@onyxpoint.com> - 0.1.0
 - Initial release of the x2go module

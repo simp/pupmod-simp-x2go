@@ -1,6 +1,6 @@
 {
   "name": "simp-x2go",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "simp",
   "summary": "Puppet module for managing x2go server and client",
   "license": "Apache-2.0",
@@ -58,8 +58,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 4.6.0 < 6.0.0"
+      "version_requirement": ">= 4.10.4 < 6.0.0"
     }
-  ],
-  "data_provider": "hiera"
+  ]
 }

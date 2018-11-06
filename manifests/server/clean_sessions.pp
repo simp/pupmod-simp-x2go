@@ -5,14 +5,14 @@
 class x2go::server::clean_sessions {
   if $x2go::server::session_service {
     service { 'x2gocleansessions':
-      enable => true,
-      ensure => 'running'
+      ensure => 'running',
+      enable => true
     }
   }
   else {
     service { 'x2gocleansessions':
-      enable => false,
-      ensure => 'stopped'
+      ensure => 'stopped',
+      enable => false
     }
   }
 }

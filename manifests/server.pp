@@ -126,16 +126,16 @@ class x2go::server (
     ensure  => 'file',
     owner   => 'root',
     group   => 'root',
-    mode    => '644',
-    content => epp("$module_name/etc/x2go/x2goserver.conf.epp", { config => $config })
+    mode    => '0644',
+    content => epp("${module_name}/etc/x2go/x2goserver.conf.epp", { config => $config })
   }
 
   file { $agent_config_file:
     ensure  => 'file',
     owner   => 'root',
     group   => 'root',
-    mode    => '644',
-    content => epp("$module_name/etc/x2go/x2goagent.options.epp", { options => $agent_options})
+    mode    => '0644',
+    content => epp("${module_name}/etc/x2go/x2goagent.options.epp", { options => $agent_options})
   }
 
   contain 'x2go::server::clean_sessions'
