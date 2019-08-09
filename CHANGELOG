@@ -1,5 +1,7 @@
-* Fri Aug 02 2019 Robert Vincent <pillarsdotnet@gmail.com> - 0.2.2
-- Support puppetlabs/stdlib 6.x and puppet 6.x.
+* Fri Aug 02 2019 Robert Vincent <pillarsdotnet@gmail.com> - 0.3.0
+- Remove Puppet 4 support
+- Add Puppet 6 support
+- Add puppetlabs-stdlib 6 support
 
 * Thu Mar 07 2019 Liz Nemsick <lnemsick.simp@gmail.com> - 0.2.1
 - Update the upper bound of stdlib to < 6.0.0
