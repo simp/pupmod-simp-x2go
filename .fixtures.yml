@@ -1,22 +1,22 @@
 ---
 fixtures:
   repositories:
-    auditd:               "https://github.com/simp/pupmod-simp-auditd"
+    auditd: https://github.com/simp/pupmod-simp-auditd.git
     augeas_core:
       repo: https://github.com/simp/pupmod-puppetlabs-augeas_core.git
       puppet_version: ">= 6.0.0"
-    augeasproviders_core: "https://github.com/simp/augeasproviders_core"
-    augeasproviders_grub: "https://github.com/simp/augeasproviders_grub"
-    concat:               "https://github.com/simp/puppetlabs-concat"
-    dconf:                "https://github.com/simp/pupmod-simp-dconf"
-    gnome:                "https://github.com/simp/pupmod-simp-gnome"
-    inifile:              "https://github.com/simp/puppetlabs-inifile"
-    logrotate:            "https://github.com/simp/pupmod-simp-logrotate"
-    mate:                 "https://github.com/simp/pupmod-simp-mate"
-    pki:                  "https://github.com/simp/pupmod-simp-pki"
-    polkit:               "https://github.com/simp/pupmod-simp-polkit"
-    rsyslog:              "https://github.com/simp/pupmod-simp-rsyslog"
-    simplib:              "https://github.com/simp/pupmod-simp-simplib"
-    stdlib:               "https://github.com/simp/puppetlabs-stdlib"
+    augeasproviders_core: https://github.com/simp/augeasproviders_core.git
+    augeasproviders_grub: https://github.com/simp/augeasproviders_grub.git
+    concat: https://github.com/simp/puppetlabs-concat.git
+    dconf: https://github.com/simp/pupmod-simp-dconf.git
+    gnome: https://github.com/simp/pupmod-simp-gnome.git
+    inifile: https://github.com/simp/puppetlabs-inifile.git
+    logrotate: https://github.com/simp/pupmod-simp-logrotate.git
+    mate: https://github.com/simp/pupmod-simp-mate.git
+    pki: https://github.com/simp/pupmod-simp-pki.git
+    polkit: https://github.com/simp/pupmod-simp-polkit.git
+    rsyslog: https://github.com/simp/pupmod-simp-rsyslog.git
+    simplib: https://github.com/simp/pupmod-simp-simplib.git
+    stdlib: https://github.com/simp/puppetlabs-stdlib.git
   symlinks:
     x2go: "#{source_dir}"
