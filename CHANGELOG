@@ -1,8 +1,8 @@
 * Thu Jul 29 2021 Trevor Vaughan <tvaughan@onyxpoint.com> - 0.4.0
 - Fixed
-  - Removed dconf, gnome, and mate as dependencies since they are not actually
-    used by the module
-  - Added REFERENCE.md
+  - Removed simp-dconf, simp-gnome, and simp-mate as dependencies since
+    they are not actually used by the module
+- Added REFERENCE.md
 
 * Thu Jun 17 2021 Chris Tessmer <chris.tessmer@onyxpoint.com> - 0.4.0
 - Removed support for Puppet 5
