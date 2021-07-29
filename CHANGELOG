@@ -1,4 +1,4 @@
-* Thu Jun 29 2021 Trevor Vaughan <tvaughan@onyxpoint.com> - 0.4.0
+* Thu Jul 29 2021 Trevor Vaughan <tvaughan@onyxpoint.com> - 0.4.0
 - Fixed
   - Removed dconf, gnome, and mate as dependencies since they are not actually
     used by the module
