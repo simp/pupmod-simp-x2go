@@ -26,6 +26,8 @@ compliance-management framework built on Puppet.
 
 If you find any issues, they may be submitted to our [bug tracker](https://simp-project.atlassian.net/).
 
+See [./REFERENCE.md](REFERENCE.md) for API details.
+
 ## Setup
 
 ### What x2go affects
