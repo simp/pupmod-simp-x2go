@@ -7,9 +7,9 @@
 ### Classes
 
 * [`x2go`](#x2go): Install and configure the x2go client and server components  x2go does not work well with compositing window managers.  It is suggested that 
-* [`x2go::install`](#x2goinstall): == Class x2go::install  This class is called from x2go for install.
-* [`x2go::server`](#x2goserver): Install and configure the x2go server
-* [`x2go::server::clean_sessions`](#x2goserverclean_sessions): Manage the x2gocleansessions service
+* [`x2go::install`](#x2go--install): == Class x2go::install  This class is called from x2go for install.
+* [`x2go::server`](#x2go--server): Install and configure the x2go server
+* [`x2go::server::clean_sessions`](#x2go--server--clean_sessions): Manage the x2gocleansessions service
 
 ## Classes
 
@@ -26,27 +26,27 @@ for use with x2go.
 
 The following parameters are available in the `x2go` class:
 
-* [`client`](#client)
-* [`server`](#server)
-* [`package_ensure`](#package_ensure)
+* [`client`](#-x2go--client)
+* [`server`](#-x2go--server)
+* [`package_ensure`](#-x2go--package_ensure)
 
-##### <a name="client"></a>`client`
+##### <a name="-x2go--client"></a>`client`
 
 Data type: `Boolean`
 
 Whether or not the system is a x2go client
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="server"></a>`server`
+##### <a name="-x2go--server"></a>`server`
 
 Data type: `Boolean`
 
 Whether or not the system is a x2go server
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="package_ensure"></a>`package_ensure`
+##### <a name="-x2go--package_ensure"></a>`package_ensure`
 
 Data type: `Simplib::PackageEnsure`
 
@@ -54,13 +54,13 @@ The state that packages managed by this module should be in
 
 Default value: `simplib::lookup('simp_options::package_ensure', { 'default_value' => 'installed' })`
 
-### <a name="x2goinstall"></a>`x2go::install`
+### <a name="x2go--install"></a>`x2go::install`
 
 == Class x2go::install
 
 This class is called from x2go for install.
 
-### <a name="x2goserver"></a>`x2go::server`
+### <a name="x2go--server"></a>`x2go::server`
 
 Install and configure the x2go server
 
@@ -68,13 +68,13 @@ Install and configure the x2go server
 
 The following parameters are available in the `x2go::server` class:
 
-* [`config`](#config)
-* [`agent_options`](#agent_options)
-* [`config_file`](#config_file)
-* [`agent_config_file`](#agent_config_file)
-* [`session_service`](#session_service)
+* [`config`](#-x2go--server--config)
+* [`agent_options`](#-x2go--server--agent_options)
+* [`config_file`](#-x2go--server--config_file)
+* [`agent_config_file`](#-x2go--server--agent_config_file)
+* [`session_service`](#-x2go--server--session_service)
 
-##### <a name="config"></a>`config`
+##### <a name="-x2go--server--config"></a>`config`
 
 Data type: `Hash[String[1], Hash[String[1], NotUndef]]`
 
@@ -136,7 +136,7 @@ allowed in an X2Go server farm
     log:
       loglevel: 'debug'
 
-##### <a name="agent_options"></a>`agent_options`
+##### <a name="-x2go--server--agent_options"></a>`agent_options`
 
 Data type: `Hash[String[1], Optional[Scalar]]`
 
@@ -157,7 +157,7 @@ The options to add to the x2goagent.options file
 @see nxagent -h
 @see data/common.yaml
 
-##### <a name="config_file"></a>`config_file`
+##### <a name="-x2go--server--config_file"></a>`config_file`
 
 Data type: `Stdlib::AbsolutePath`
 
@@ -165,7 +165,7 @@ The location of the main server configuration file
 
 Default value: `'/etc/x2go/x2goserver.conf'`
 
-##### <a name="agent_config_file"></a>`agent_config_file`
+##### <a name="-x2go--server--agent_config_file"></a>`agent_config_file`
 
 Data type: `Stdlib::AbsolutePath`
 
@@ -173,16 +173,16 @@ The location of the agent configuration file
 
 Default value: `'/etc/x2go/x2goagent.options'`
 
-##### <a name="session_service"></a>`session_service`
+##### <a name="-x2go--server--session_service"></a>`session_service`
 
 Data type: `Boolean`
 
 Enable the x2gocleansessions service to enable full accounting and resuming
 of sessions
 
-Default value: ``true``
+Default value: `true`
 
-### <a name="x2goserverclean_sessions"></a>`x2go::server::clean_sessions`
+### <a name="x2go--server--clean_sessions"></a>`x2go::server::clean_sessions`
 
 Manage the x2gocleansessions service
 
