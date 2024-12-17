@@ -4,7 +4,7 @@ test_name 'x2go with MATE and GNOME'
 
 describe 'x2go with MATE and GNOME' do
   hosts.each do |host|
-    let(:manifest) {
+    let(:manifest) do
       _manifest = <<-EOS
         include 'gnome'
         class { 'x2go': server => true }
@@ -15,15 +15,15 @@ describe 'x2go with MATE and GNOME' do
       end
 
       _manifest
-    }
+    end
 
     context "on #{host}" do
-      it 'should work with no errors' do
-        apply_manifest_on(host, manifest, :catch_failures => true)
+      it 'works with no errors' do
+        apply_manifest_on(host, manifest, catch_failures: true)
       end
 
-      it 'should be idempotent' do
-        apply_manifest_on(host, manifest, :catch_changes => true)
+      it 'is idempotent' do
+        apply_manifest_on(host, manifest, catch_changes: true)
         on(host, 'rpm -qa > /tmp/newrpms')
       end
     end
