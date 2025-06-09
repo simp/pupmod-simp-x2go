@@ -5,16 +5,16 @@ test_name 'x2go with MATE and GNOME'
 describe 'x2go with MATE and GNOME' do
   hosts.each do |host|
     let(:manifest) do
-      _manifest = <<-EOS
+      updated_manifest = <<-EOS
         include 'gnome'
         class { 'x2go': server => true }
       EOS
 
       if host.host_hash[:roles].include?('mate_enabled')
-        _manifest << "\ninclude 'mate'"
+        updated_manifest << "\ninclude 'mate'"
       end
 
-      _manifest
+      updated_manifest
     end
 
     context "on #{host}" do
