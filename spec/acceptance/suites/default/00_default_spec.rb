@@ -19,7 +19,9 @@ describe 'x2go class' do
   # published in EPEL 10, so these tests cannot run there.  This is an
   # upstream packaging gap (the same failure occurs on a full EL10 host),
   # not a containerization limitation.
-  x2go_in_epel = ->(host) { fact_on(host, 'os.release.major').to_i < 10 }
+  def x2go_in_epel?(host)
+    fact_on(host, 'os.release.major').to_i < 10
+  end
 
   hosts.each do |host|
     context "on #{host}" do
@@ -52,35 +54,35 @@ describe 'x2go class' do
       end
 
       it 'works with no errors' do
-        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel.call(host)
+        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel?(host)
         on(host, 'rpm -qa > /tmp/rpms')
         apply_manifest_on(host, manifest, catch_failures: true)
       end
 
       it 'is idempotent' do
-        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel.call(host)
+        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel?(host)
         apply_manifest_on(host, manifest, catch_changes: true)
       end
 
       it 'has the client installed' do
-        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel.call(host)
+        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel?(host)
         expect(host.check_for_package('x2goclient')).to be true
       end
     end
 
     context 'as a server' do
       it 'works with no errors' do
-        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel.call(host)
+        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel?(host)
         apply_manifest_on(host, server_manifest, catch_failures: true)
       end
 
       it 'is idempotent' do
-        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel.call(host)
+        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel?(host)
         apply_manifest_on(host, server_manifest, catch_changes: true)
       end
 
       it 'has the client installed' do
-        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel.call(host)
+        skip('x2go is not packaged in EPEL 10') unless x2go_in_epel?(host)
         expect(host.check_for_package('x2goserver')).to be true
       end
     end
