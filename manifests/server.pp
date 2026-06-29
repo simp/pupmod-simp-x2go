@@ -22,7 +22,7 @@
 #   ]
 #   ```
 #   @see x2goserver.conf(5)
-#   @see data/common.yml
+#   @see data/common.yaml
 #
 # @option config [Hash] limit users
 #   A Hash of users specifying the maximum number of simultaneous sessions

@@ -2,7 +2,7 @@
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/73/badge)](https://bestpractices.coreinfrastructure.org/projects/73)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/simp/x2go.svg)](https://forge.puppetlabs.com/simp/x2go)
 [![Puppet Forge Downloads](https://img.shields.io/puppetforge/dt/simp/x2go.svg)](https://forge.puppetlabs.com/simp/x2go)
-[![Build Status](https://travis-ci.org/simp/pupmod-simp-x2go.svg)](https://travis-ci.org/simp/pupmod-simp-x2go)
+[![PR Tests](https://github.com/simp/pupmod-simp-x2go/actions/workflows/pr_tests.yml/badge.svg)](https://github.com/simp/pupmod-simp-x2go/actions/workflows/pr_tests.yml)
 
 
 #### Table of Contents
@@ -25,7 +25,7 @@ This is a module for managing ``x2go`` server and client installations.
 This module is a component of the [System Integrity Management Platform](https://simp-project.com), a
 compliance-management framework built on Puppet.
 
-If you find any issues, they may be submitted to our [bug tracker](https://simp-project.atlassian.net/).
+If you find any issues, they may be submitted to our [bug tracker](https://github.com/simp/pupmod-simp-x2go/issues).
 
 See [./REFERENCE.md](REFERENCE.md) for API details.
 
