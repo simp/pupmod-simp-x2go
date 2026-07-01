@@ -2,7 +2,7 @@
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/73/badge)](https://bestpractices.coreinfrastructure.org/projects/73)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/simp/x2go.svg)](https://forge.puppetlabs.com/simp/x2go)
 [![Puppet Forge Downloads](https://img.shields.io/puppetforge/dt/simp/x2go.svg)](https://forge.puppetlabs.com/simp/x2go)
-[![Build Status](https://travis-ci.org/simp/pupmod-simp-x2go.svg)](https://travis-ci.org/simp/pupmod-simp-x2go)
+[![PR Tests](https://github.com/simp/pupmod-simp-x2go/actions/workflows/pr_tests.yml/badge.svg)](https://github.com/simp/pupmod-simp-x2go/actions/workflows/pr_tests.yml)
 
 
 #### Table of Contents
@@ -11,6 +11,7 @@
   * [This is a SIMP module](#this-is-a-simp-module)
 * [Setup](#setup)
   * [What x2go affects](#what-x2go-affects)
+  * [Package repositories](#package-repositories)
 * [Usage](#usage)
 * [Development](#development)
   * [Acceptance tests](#acceptance-tests)
@@ -24,7 +25,7 @@ This is a module for managing ``x2go`` server and client installations.
 This module is a component of the [System Integrity Management Platform](https://simp-project.com), a
 compliance-management framework built on Puppet.
 
-If you find any issues, they may be submitted to our [bug tracker](https://simp-project.atlassian.net/).
+If you find any issues, they may be submitted to our [bug tracker](https://github.com/simp/pupmod-simp-x2go/issues).
 
 See [./REFERENCE.md](REFERENCE.md) for API details.
 
@@ -35,6 +36,43 @@ See [./REFERENCE.md](REFERENCE.md) for API details.
 The ``x2go`` module is quite minimal, like ``x2go`` itself and simply installs
 the required packages and allows you to configure the most common files with
 safe defaults in place.
+
+### Package repositories
+
+This module installs packages but **does not manage the repositories that
+provide them**. The ``x2go`` packages (``x2goclient`` and ``x2goserver``) are
+distributed through [EPEL](https://docs.fedoraproject.org/en-US/epel/), and
+several of their dependencies (for example ``perl(File::BaseDir)``, required by
+``x2goserver``) live in the CodeReady Builder / PowerTools repository. Before
+applying this module you must enable both repositories on the target node, or
+the package installation will fail.
+
+On full distribution images CodeReady Builder is typically enabled already, but
+minimal images (and most containers) require it to be enabled explicitly. The
+repository name varies across releases and distributions:
+
+```shell
+# Enable EPEL (provides the x2go packages)
+dnf install -y epel-release   # or: dnf install -y oracle-epel-release-el<N> on Oracle Linux
+
+# Enable CodeReady Builder / PowerTools (provides build dependencies)
+dnf install -y dnf-plugins-core
+
+# RedHat / CentOS / AlmaLinux / Rocky
+#   EL8 uses "powertools"; EL9 uses "crb"
+dnf config-manager --set-enabled crb \
+  || dnf config-manager --set-enabled powertools \
+  || dnf config-manager --set-enabled PowerTools
+
+# Oracle Linux (replace <N> with the major release, e.g. 8 or 9)
+dnf config-manager --set-enabled ol<N>_codeready_builder \
+  || dnf config-manager --set-enabled ol<N>_distro_builder \
+  || dnf config-manager --set-enabled ol<N>_addons
+```
+
+You may manage these repositories with whatever mechanism you prefer (a Puppet
+module such as ``puppet/epel``, kickstart, or your own profile). This module
+simply assumes the ``x2go`` packages are installable.
 
 ## Usage
 

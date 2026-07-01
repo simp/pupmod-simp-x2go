@@ -99,7 +99,7 @@ Hash[
 ]
 ```
 @see x2goserver.conf(5)
-@see data/common.yml
+@see data/common.yaml
 
 Options:
 
