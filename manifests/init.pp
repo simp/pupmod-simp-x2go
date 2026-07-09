@@ -21,7 +21,6 @@ class x2go (
   Boolean                $server         = false,
   Simplib::PackageEnsure $package_ensure = simplib::lookup('simp_options::package_ensure', { 'default_value' => 'installed' })
 ) {
-
   simplib::assert_metadata($module_name)
 
   include 'x2go::install'

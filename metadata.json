@@ -1,6 +1,6 @@
 {
   "name": "simp-x2go",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "simp",
   "summary": "Puppet module for managing x2go server and client",
   "license": "Apache-2.0",

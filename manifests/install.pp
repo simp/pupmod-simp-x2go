@@ -12,6 +12,6 @@ class x2go::install {
   }
 
   if $x2go::server {
-    ensure_packages('x2goserver', { 'ensure' => $x2go::package_ensure } )
+    ensure_packages('x2goserver', { 'ensure' => $x2go::package_ensure })
   }
 }
