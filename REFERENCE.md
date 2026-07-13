@@ -136,6 +136,8 @@ allowed in an X2Go server farm
     log:
       loglevel: 'debug'
 
+Default value: `{ 'log' => { 'loglevel' => 'notice' } }`
+
 ##### <a name="-x2go--server--agent_options"></a>`agent_options`
 
 Data type: `Hash[String[1], Optional[Scalar]]`
@@ -156,6 +158,8 @@ The options to add to the x2goagent.options file
 
 @see nxagent -h
 @see data/common.yaml
+
+Default value: `{ '-extension' => 'XFIXES', '-nolisten' => 'tcp', '-clipboard' => 'server', '-audit' => 4 }`
 
 ##### <a name="-x2go--server--config_file"></a>`config_file`
 

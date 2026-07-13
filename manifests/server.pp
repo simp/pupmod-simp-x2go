@@ -135,7 +135,7 @@ class x2go::server (
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => epp("${module_name}/etc/x2go/x2goagent.options.epp", { options => $agent_options})
+    content => epp("${module_name}/etc/x2go/x2goagent.options.epp", { options => $agent_options })
   }
 
   contain 'x2go::server::clean_sessions'

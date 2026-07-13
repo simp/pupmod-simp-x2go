@@ -18,5 +18,3 @@ fixtures:
     rsyslog: https://github.com/simp/pupmod-simp-rsyslog.git
     simplib: https://github.com/simp/pupmod-simp-simplib.git
     stdlib: https://github.com/simp/puppetlabs-stdlib.git
-  symlinks:
-    x2go: "#{source_dir}"
