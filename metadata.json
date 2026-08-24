@@ -1,6 +1,6 @@
 {
   "name": "simp-x2go",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "simp",
   "summary": "Puppet module for managing x2go server and client",
   "license": "Apache-2.0",
@@ -13,11 +13,11 @@
   "dependencies": [
     {
       "name": "simp/simplib",
-      "version_requirement": ">= 4.9.0 < 6.0.0"
+      "version_requirement": ">= 4.9.0 < 8.0.0"
     },
     {
       "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 8.0.0 < 10.0.0"
+      "version_requirement": ">= 8.0.0 < 11.0.0"
     }
   ],
   "operatingsystem_support": [
