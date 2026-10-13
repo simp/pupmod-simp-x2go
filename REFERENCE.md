@@ -6,7 +6,7 @@
 
 ### Classes
 
-* [`x2go`](#x2go): Install and configure the x2go client and server components  x2go does not work well with compositing window managers.  It is suggested that 
+* [`x2go`](#x2go): Install and configure the x2go client and server components  x2go does not work well with compositing window managers.  It is suggested that
 * [`x2go::install`](#x2go--install): == Class x2go::install  This class is called from x2go for install.
 * [`x2go::server`](#x2go--server): Install and configure the x2go server
 * [`x2go::server::clean_sessions`](#x2go--server--clean_sessions): Manage the x2gocleansessions service
@@ -189,4 +189,3 @@ Default value: `true`
 ### <a name="x2go--server--clean_sessions"></a>`x2go::server::clean_sessions`
 
 Manage the x2gocleansessions service
-
